@@ -1,3 +1,13 @@
+"""
+mat_to_excle
+需要安装以下 Python 库：(Required Python libraries:)
+scipy h5py pandas openpyxl numpy
+可以使用以下命令安装：(Installation command:)
+pip install scipy h5py pandas openpyxl numpy
+在主函数定义中修改你的输入文件与输出文件
+Modify your input file and output file in the main function definition.
+"""
+
 import scipy.io
 import h5py
 import numpy as np
@@ -84,8 +94,8 @@ def save_to_excel(data, output_file="result.xlsx"):
     print(f"Excel saved: {output_file}")
 # 5. 主函数
 def main():
-    file_path = "20260427-1光遗传_averagedata.mat"   # ← 修改这里
-    output_file = "光遗传2_real_result.xlsx"
+    file_path = "input.mat"   # ← 修改这里
+    output_file = "output.xlsx"
     data = load_mat_file(file_path)
     print("\nVariables:")
     for k in data:
