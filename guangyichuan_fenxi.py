@@ -1,11 +1,19 @@
 """
 光遗传学数据分析脚本
-读取 "光遗传3_result.xlsx" 文件，进行 PSTH 绘图、光刺激前后对比以及配对 t 检验。
+读取文件，进行 PSTH 绘图、光刺激前后对比以及配对 t 检验。
 
 需要安装以下 Python 库：
     pandas, numpy, matplotlib, scipy, openpyxl
 可以使用以下命令安装：
     pip install pandas numpy matplotlib scipy openpyxl
+    在file_name = 'input_file.xlsx'中替换你的文件
+Optogenetic Data Analysis Script
+Read the file, perform PSTH plotting, comparison before and after optical stimulation, and paired t-test analysis.
+Required Python libraries:
+pandas, numpy, matplotlib, scipy, openpyxl
+Installation command:
+pip install pandas numpy matplotlib scipy openpyxl
+Replace 'input_file.xlsx' in the line file_name = 'input_file.xlsx' with your own file path and name.
 """
 import pandas as pd
 import numpy as np
@@ -15,8 +23,7 @@ from scipy import stats
 plt.rcParams['font.sans-serif'] = ['SimHei', 'DejaVu Sans']  # 尝试使用黑体或默认字体
 plt.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
 # 1. 读取数据
-# ------------------------------
-file_name = '光遗传2_real_result.xlsx'
+file_name = 'input_file.xlsx'
 xls = pd.ExcelFile(file_name)
 # 读取各工作表
 df_control_time = pd.read_excel(xls, sheet_name='control_time')
